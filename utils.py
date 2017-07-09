@@ -4,12 +4,14 @@ import time
 import numpy as np
 
 from torchvision.datasets import ImageFolder
+from torch.utils.data import DataLoader
 
 
-def create_image_loader(path):
+def create_image_loader(path, batch_size):
     '''http://pytorch.org/docs/master/torchvision/datasets.html'''
-    loader = ImageFolder(path)
-    return loader
+    dataset = ImageFolder(path)
+    data_loader = DataLoader(dataset, batch_size=batch_size)
+    return data_loader
 
 
 class Progbar(object):
