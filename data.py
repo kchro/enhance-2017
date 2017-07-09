@@ -12,7 +12,7 @@ def download_bsd300(dest="dataset"):
 
     if not exists(output_image_dir):
         makedirs(dest)
-        url = "http://www.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/BSR/BSR_bsds500.tgz"
+        url = "http://www2.eecs.berkeley.edu/Research/Projects/CS/vision/bsds/BSDS300-images.tgz"
         print("downloading url ", url)
 
         data = urllib.request.urlopen(url)
