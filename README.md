@@ -1,6 +1,14 @@
 # enhance-2017
 
 
+## TODOs
+
+-  [ ] Find larger dataset
+-  [ ] Understand loss
+-  [ ] Read papers to come up with new models
+
+
+
 ## PyTorch Example
 https://github.com/pytorch/examples/tree/master/super_resolution
 
