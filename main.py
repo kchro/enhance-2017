@@ -1,5 +1,6 @@
 from __future__ import print_function
 import argparse
+import os
 from math import log10
 
 import torch
@@ -31,6 +32,11 @@ if cuda and not torch.cuda.is_available():
 torch.manual_seed(opt.seed)
 if cuda:
     torch.cuda.manual_seed(opt.seed)
+
+try:
+    os.mkdir('checkpoints')
+except OSError:
+    pass
 
 print('===> Loading datasets')
 train_set = get_training_set(opt.upscale_factor)
@@ -84,7 +90,7 @@ def test():
 
 
 def checkpoint(epoch):
-    model_out_path = "model_epoch_{}.pth".format(epoch)
+    model_out_path = "checkpoints/model_epoch_{}.pth".format(epoch)
     torch.save(model, model_out_path)
     print("Checkpoint saved to {}".format(model_out_path))
 
